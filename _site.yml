@@ -1,0 +1,21 @@
+name: "VAProject"
+title: "VAProject"
+description: |
+  VAProject
+output_dir: "_site"
+navbar:
+  left:
+    - text: "Overview"
+      href: overview.html
+    - text: "Proposal"
+      href: proposal.html
+    - text: "Poster"
+      href: poster.html
+    - text: "Research Paper"
+      href: researchpaper.html
+    - text: "Application"
+      href: application.html
+  right:
+    - text: "Home"
+      href: index.html
+output: distill::distill_article
