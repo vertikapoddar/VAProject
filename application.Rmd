@@ -1,25 +1,27 @@
 ---
 title: "Application"
 description: |
-  A new article created using the Distill format.
-author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: "`r Sys.Date()`"
+  The application developed can be accessed from [here.](https://vertika.shinyapps.io/vagroup4/)
+
 output: distill::distill_article
+header-includes:
+  - \usepackage{pdfpages}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
+There are three different tabs on the application are:
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
++ Word Cloud
++ Network Graph
++ Location Bar Chart
 
+The guide for navigating through the application is attached below:
 
-
+```{r, fig.align="center", echo=FALSE}
+knitr::include_graphics("User_Guide.pdf")
+```
 
 
