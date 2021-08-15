@@ -1,13 +1,11 @@
 ---
 title: "Overview"
 description: |
-  A new article created using the Distill format.
+  This is a website created for our Visual Analytics course
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: "`r Sys.Date()`"
+  - name: Joyce WOON Shi Hui, LANG Shuang, Vertika PODDAR
+    affiliation: Singapore Management University
+    
 output: distill::distill_article
 ---
 
@@ -15,11 +13,20 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
+![](images/vast challenge.png)
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+In the roughly twenty years that Tethys-based GAStech has been operating a natural gas production site in the island country of Kronos, it has produced remarkable profits and developed strong relationships with the government of Kronos. However, GAStech has not been as successful in demonstrating environmental stewardship.
+
+In January, 2014, the leaders of GAStech are celebrating their new-found fortune as a result of the initial public offering of their very successful company. In the midst of this celebration, several employees of GAStech go missing. An organization known as the Protectors of Kronos (POK) is suspected in the disappearance, but things may not be what they seem.
+
+Our aim is to decode this mystery.
+
+For this our storyboard is as follows:
 
 
+![Storyboard 1](images/storyboard1.jpg)
 
+![Storyboard 2](images/storyboard2.jpg)
 
+![Storyboard 3](images/storyboard3.jpg)
 
