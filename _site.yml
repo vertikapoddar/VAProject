@@ -7,8 +7,6 @@ navbar:
   left:
     - text: "Overview"
       href: overview.html
-    - text: "Proposal"
-      href: proposal.html
     - text: "Poster"
       href: poster.html
     - text: "Research Paper"

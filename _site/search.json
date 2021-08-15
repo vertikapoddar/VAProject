@@ -6,7 +6,7 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-14T15:25:10+08:00"
+      "last_modified": "2021-08-15T23:48:01+08:00"
     },
     {
       "path": "application.html",
@@ -14,7 +14,7 @@
       "description": "The application developed can be accessed from [here.](https://vertika.shinyapps.io/vagroup4/)\n",
       "author": [],
       "contents": "\r\nThere are three different tabs on the application are:\r\nWord Cloud\r\nNetwork Graph\r\nLocation Bar Chart\r\nThe guide for navigating through the application can be accessed from here.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T23:43:12+08:00"
+      "last_modified": "2021-08-15T23:48:12+08:00"
     },
     {
       "path": "index.html",
@@ -22,7 +22,7 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-14T15:25:12+08:00"
+      "last_modified": "2021-08-15T23:48:19+08:00"
     },
     {
       "path": "overview.html",
@@ -36,14 +36,14 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T22:09:07+08:00"
+      "last_modified": "2021-08-15T23:48:23+08:00"
     },
     {
       "path": "poster.html",
       "title": "Poster",
       "author": [],
       "contents": "\r\nOur Project Poster can be accessed from here.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T23:35:41+08:00"
+      "last_modified": "2021-08-15T23:48:29+08:00"
     },
     {
       "path": "researchpaper.html",
@@ -57,7 +57,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-14T15:25:14+08:00"
+      "last_modified": "2021-08-15T23:48:37+08:00"
     }
   ],
   "collections": []
