@@ -48,16 +48,9 @@
     {
       "path": "researchpaper.html",
       "title": "Research Paper",
-      "description": "A new article created using the Distill format.\n",
-      "author": [
-        {
-          "name": "Nora Jones",
-          "url": "https://example.com/norajones"
-        }
-      ],
-      "date": "`r Sys.Date()`",
-      "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T23:48:37+08:00"
+      "author": [],
+      "contents": "\r\nOur Research Paper can be accessed from here.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-16T00:39:09+08:00"
     }
   ],
   "collections": []
