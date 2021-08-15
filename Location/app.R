@@ -400,7 +400,6 @@ server <- function(input, output) {
        visIgraphLayout() %>%
        visNodes(
          shape = "dot",
-         title = "Hello",
          color = list(
            background = "#0085AF",
            border = "#013848",
