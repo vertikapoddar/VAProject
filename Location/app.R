@@ -16,6 +16,9 @@ library(scales)
 library(tm)
 library(wordcloud)
 library(memoise)
+library(ggraph)
+library(tidygraph)
+library(visNetwork)
 
 #The code chunk below imports the data
 
@@ -214,6 +217,50 @@ wc3$period <- "20:00 to 21:34"
 wc4$period <- "Whole Period"
 wcall <- rbind(wc1, wc2, wc3, wc4)
 
+#The code chunk below imports the data
+
+GAStech_nodes <- read_csv("data/GAStech_email_node.csv")
+GAStech_edges <- read_csv("data/GAStech_email_edge-v2.csv")
+
+#The code chunk below will perform the required changes
+
+GAStech_edges$SentDate  = dmy(GAStech_edges$SentDate)
+GAStech_edges$Weekday = wday(GAStech_edges$SentDate, 
+                             label = TRUE, 
+                             abbr = FALSE)
+
+GAStech_edges_aggregated <- GAStech_edges %>%
+  filter(MainSubject == "Work related") %>%
+  group_by(source, target, Weekday) %>%
+  summarise(Weight = n()) %>%
+  filter(source!=target) %>%
+  filter(Weight > 1) %>%
+  ungroup()
+
+# Data preparation work for network graph
+
+GAStech_edges_aggregated <- GAStech_edges %>%
+  left_join(GAStech_nodes, by = c("sourceLabel" = "label")) %>%
+  rename(from = id) %>%
+  left_join(GAStech_nodes, by = c("targetLabel" = "label")) %>%
+  rename(to = id) %>%
+  filter(MainSubject == "Work related") %>%
+  group_by(from, to) %>%
+  summarise(weight = n()) %>%
+  filter(from!=to) %>%
+  filter(weight > 1) %>%
+  ungroup()
+
+GAStech_nodes <- GAStech_nodes %>%
+  rename(group = Department)
+
+nodes <- GAStech_nodes
+edges <- GAStech_edges_aggregated
+
+list_dept <- as.list(nodes$group)
+
+lnodes <- data.frame(id = 1:6, label = c(1:6), color = c("red","green", "blue", "black", "cyan", "yellow")) 
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     
@@ -252,12 +299,19 @@ ui <- fluidPage(
                  )      
                  
         ),
-        tabPanel("Location Popularity",
+        tabPanel("Network Graph",
+                 
+                 # Application title
+                 titlePanel("Network Graph"),
+                 visNetworkOutput("network")
+                 
+        ),
+        tabPanel("Location Bar Chart",
 
     # Application title
-      titlePanel("Locations by frequency of vists"),
+      titlePanel("Locations by frequency of visits"),
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar with a select input for location 
       sidebarLayout(
           sidebarPanel(
             selectInput(inputId = "select_location",
@@ -271,10 +325,10 @@ ui <- fluidPage(
             plotlyOutput("location_day"),
             plotlyOutput("location_hour")
         )
-    )),
+    ))
       
-      tabPanel("Network Graph")
-  )
+
+)
 )
 
 # Define server logic required to draw a histogram
@@ -339,6 +393,44 @@ server <- function(input, output) {
    
    output$plot2 <- renderTable(filtered2 <- filter(df_ct, period == input$selection & freq >= input$freq))
 
+   output$network <- renderVisNetwork({
+     
+     
+     visNetwork(nodes, edges, width = "200%") %>%
+       visIgraphLayout() %>%
+       visNodes(
+         shape = "dot",
+         title = "Hello",
+         color = list(
+           background = "#0085AF",
+           border = "#013848",
+           highlight = "#FF8000"
+         ),
+         shadow = list(enabled = TRUE, size = 10)
+       ) %>%
+       visEdges(
+         shadow = FALSE,
+         color = list(color = "#BDC3C7", highlight = "#CC0000")
+       ) %>%
+       visOptions(highlightNearest = list(enabled = T, degree = 1, hover = T),
+                  selectedBy = list(variable = "group",main = "Select Department", style = 'width: 200px; height: 26px;
+   background: #D7DBDD;
+   color: darkblue;
+   border:none;
+   outline:none;'), nodesIdSelection = list(enabled = TRUE, main = "Select Employee", style = 'width: 200px; height: 26px;
+   background: #D7DBDD;
+   color: darkblue;
+   border:none;
+   outline:none;')) %>% 
+       visGroups(groupname = "Administration", color = "#F1948A") %>%
+       visGroups(groupname = "Engineering", color = "#A569BD") %>%
+       visGroups(groupname = "Executive", color = "#5DADE2") %>%
+       visGroups(groupname = "Facilities", color = "#48C9B0") %>%
+       visGroups(groupname = "Information Technology", color = "#F7DC6F") %>%
+       visGroups(groupname = "Security", color = "#DC7633") %>%
+       visLegend(position = "right", main =  list(text = "Department", style= "font-family:Arial;color:black;font-size:20px;text-align:center;"), useGroups = TRUE, width = 0.2, stepY = 50) %>%
+       visLayout(randomSeed = 11)
+   })
 }
 
 # Run the application 

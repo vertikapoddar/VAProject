@@ -5,9 +5,9 @@ account: vertika
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4492553
-bundleId: 4923495
+bundleId: 4924938
 url: https://vertika.shinyapps.io/vagroup4/
-when: 1628958637.62043
-lastSyncTime: 1628958637.62043
+when: 1629015411.00985
+lastSyncTime: 1629015411.00985
 asMultiple: FALSE
 asStatic: FALSE
