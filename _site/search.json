@@ -41,10 +41,9 @@
     {
       "path": "poster.html",
       "title": "Poster",
-      "description": "A new article created using the Distill format.\n",
       "author": [],
-      "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T22:57:40+08:00"
+      "contents": "\r\nOur Project Poster can be accessed from here.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-15T23:35:41+08:00"
     },
     {
       "path": "researchpaper.html",
