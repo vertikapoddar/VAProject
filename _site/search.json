@@ -13,8 +13,8 @@
       "title": "Application",
       "description": "The application developed can be accessed from [here.](https://vertika.shinyapps.io/vagroup4/)\n",
       "author": [],
-      "contents": "\r\nThere are three different tabs on the application are:\r\nWord Cloud\r\nNetwork Graph\r\nLocation Bar Chart\r\nThe guide for navigating through the application is attached below:\r\n\r\n\r\n\r\nFigure 1: Caption\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-15T22:54:45+08:00"
+      "contents": "\r\nThere are three different tabs on the application are:\r\nWord Cloud\r\nNetwork Graph\r\nLocation Bar Chart\r\nThe guide for navigating through the application can be accessed from here.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-15T23:43:12+08:00"
     },
     {
       "path": "index.html",

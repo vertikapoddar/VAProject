@@ -18,10 +18,8 @@ There are three different tabs on the application are:
 + Network Graph
 + Location Bar Chart
 
-The guide for navigating through the application is attached below:
+The guide for navigating through the application can be accessed from [here.](User_guide.pdf)
 
-```{r, fig.align="center", echo=FALSE}
-knitr::include_graphics("User_Guide.pdf")
-```
+
 
 
